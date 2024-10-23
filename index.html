@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interativo Cyberpunk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="intro-screen" id="introScreen">
+        <div class="intro-slides">
+            <div class="slide" data-slide="1">
+                <h2 class="slide-title">Bem-vindo ao Projeto</h2>
+                <p class="slide-text">Este é um guia interativo sobre tecnologias e ferramentas modernas.</p>
+            </div>
+            
+            <div class="slide" data-slide="2" style="display: none;">
+                <h2 class="slide-title">Como Funciona</h2>
+                <p class="slide-text">Explore o mapa clicando nos pontos luminosos para descobrir diferentes áreas do conhecimento.</p>
+            </div>
+            
+            <div class="slide" data-slide="3" style="display: none;">
+                <h2 class="slide-title">O que você encontrará</h2>
+                <p class="slide-text">Informações sobre I.A., plataformas de ensino e dicas de organização pessoal.</p>
+            </div>
+    
+            <div class="slide-controls">
+                <button class="next-btn" onclick="nextSlide()">Próximo</button>
+                <button class="start-btn" style="display: none;" onclick="startExploration()">Iniciar Exploração</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-container" id="mapContainer">
+        <div class="map">
+            <div class="hotspot" style="top: 40%; left: 45%" onclick="showContent('ia')">
+                <span class="area-title">Inteligência Artificial</span>
+            </div>
+            <div class="hotspot" style="top: 58%; left: 47%" onclick="showContent('ensino')">
+                <span class="area-title">Plataformas de Ensino</span>
+            </div>
+            <div class="hotspot" style="top: 70%; left: 65%" onclick="showContent('organizacao')">
+                <span class="area-title">Organização Pessoal</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-screen" id="contentScreen">
+        <button class="back-btn" onclick="backToMap()">Voltar ao Mapa</button>
+        <div class="content-area">
+            <h2 class="content-title" id="contentTitle"></h2>
+            <div class="dialog-box">
+                <div class="content-text" id="contentText"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
